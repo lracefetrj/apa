@@ -3,8 +3,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 
-long int __lst_size = 0;
+long int _lst_size = 0;
 
 typedef struct list List;
 
@@ -21,7 +22,7 @@ List *lst_create (void)
 
 long int lst_size (void)
 {
-    return __lst_size;
+    return _lst_size;
 }
 
 List *lst_add (List *lst, int data)
@@ -36,7 +37,7 @@ List *lst_add (List *lst, int data)
     
     lst = tmp;
     
-    __lst_size++;
+    _lst_size++;
     
     return lst;
 }
@@ -69,7 +70,7 @@ List *lst_add_ord (List *lst, int data)
         ant->next = p;
     }
     
-    __lst_size++;
+    _lst_size++;
     
     return lst;
 }
@@ -279,7 +280,7 @@ List *lst_remove (List *lst, int data)
     
     free (tmp);
     
-    __lst_size--;
+    _lst_size--;
     
     return lst;
 }
